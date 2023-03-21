@@ -16,6 +16,11 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let choice = prompt("Enter your choice:");
     choice = choice.toLowerCase();
+
+    if (choice != 'rock' && choice != 'paper' && choice != 'scissors') {
+        choice = getPlayerChoice();
+    }
+
     return choice;
 }
 
