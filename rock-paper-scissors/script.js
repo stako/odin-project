@@ -76,7 +76,7 @@ function game() {
 
     for (let i = 0; i < 5; i++) {
         let result = playRound(getPlayerChoice(), getComputerChoice());
-        console.log(`Round 1: ${result}`);
+        console.log(`Round ${i+1}: ${result}`);
 
         switch(result) {
             case 'win':
