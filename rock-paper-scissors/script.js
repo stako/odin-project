@@ -67,28 +67,3 @@ function playRound(playerChoice, computerChoice) {
 
     return result;
 }
-
-function game() {
-    // plays 5 rounds and outputs the results into the console
-    let wins = 0;
-    let losses = 0;
-    let ties = 0;
-
-    for (let i = 0; i < 5; i++) {
-        let result = playRound(getPlayerChoice(), getComputerChoice());
-        console.log(`Round ${i+1}: ${result}`);
-
-        switch(result) {
-            case 'win':
-                wins++;
-                break;
-            case 'lose':
-                losses++;
-                break;
-            case 'tie':
-                ties++;
-        }
-    }
-    
-    console.log(`Wins: ${wins} | Losses: ${losses} | Ties : ${ties}`);
-}
