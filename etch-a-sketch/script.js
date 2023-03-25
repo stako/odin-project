@@ -7,6 +7,7 @@ const totalSquares = gridSize**2;
 for (let i = 1; i <= totalSquares; i++) {
     const square = document.createElement('div');
     square.classList.add('square');
+    square.style['flex-basis'] = `${1/gridSize*100}%`;
     square.addEventListener('mouseover', onMouseover);
     container.appendChild(square);
 }
