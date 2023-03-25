@@ -2,16 +2,16 @@
 
 body {
     font-family: Roboto, sans-serif;
-    background-color: #ECEFF4;
-    color: #4C566A;
+    background-color: #2E3440;
     margin: 0;
 }
 
 h1 {
     font-weight: 100;
     text-align: center;
-    background-color: white;
-    margin: 0;
+    background-color: #3B4252;
+    color: #ECEFF4;
+    margin: 0 0 32px 0;
     padding: 10px;
     box-shadow: 0px 5px 10px 0px #24293311;
 }
@@ -20,4 +20,12 @@ h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 80vh;
+    height: 80vh;
+    margin: auto;
+}
+
+.square {
+    background-color: #D8DEE9;
+    flex: 1;
 }
