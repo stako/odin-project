@@ -67,3 +67,9 @@ function playRound(playerChoice, computerChoice) {
 
     return result;
 }
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(function(btn) {
+    btn.addEventListener('click', () => playRound(btn.id, getComputerChoice()));
+});
