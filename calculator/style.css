@@ -1,7 +1,7 @@
 .container {
     margin: auto;
     background-color: brown;
-    width: 400px;
+    width: 300px;
     border-radius: 8px;
     padding: 6px;
 }
@@ -9,7 +9,7 @@
 .display {
     padding: 6px;
     margin-bottom: 6px;
-    height: 60px;
+    height: 54px;
     background-color: cadetblue;
     border-radius: 8px;
     display: flex;
@@ -31,7 +31,7 @@
 
 .buttons>div>div {
     background-color: blue;
-    flex: 0 0 80px;
+    flex: 0 0 64px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,5 +43,5 @@
 }
 
 .buttons .button-eq {
-    flex: 1 0 80px;
+    flex: 1 0 64px;
 }
