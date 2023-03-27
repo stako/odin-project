@@ -12,6 +12,9 @@
     height: 60px;
     background-color: cadetblue;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
 
 .buttons {
