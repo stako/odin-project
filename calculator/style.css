@@ -1,0 +1,44 @@
+.container {
+    margin: auto;
+    background-color: brown;
+    width: 400px;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.display {
+    padding: 6px;
+    margin-bottom: 6px;
+    height: 60px;
+    background-color: cadetblue;
+    border-radius: 8px;
+}
+
+.buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.buttons>div {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.buttons>div>div {
+    background-color: blue;
+    flex: 0 0 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.buttons .button-empty {
+    display: none;
+}
+
+.buttons .button-eq {
+    flex: 1 0 80px;
+}
