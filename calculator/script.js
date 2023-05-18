@@ -73,11 +73,21 @@ function doMath() {
 function updateDisplay() {
     if (solution !== null) {
         display.textContent = solution;
-    } else if (numB !== null) {
-        display.textContent = numB;
-    } else if (numA !== null) {
-        display.textContent = numA;
+        return;
+    }
+
+    if (numA !== null) {
+        display.textContent = numA.toString()
     } else {
         display.textContent = 0;
+        return;
+    }
+
+    if (operator !== null) {
+        display.textContent += operator;
+    }
+
+    if (numB!== null) {
+        display.textContent += numB;
     }
 }
