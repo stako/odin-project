@@ -17,6 +17,7 @@ const opButtons = {
     mul: true,
     div: true,
     eq: true,
+    ac: true,
 };
 
 const numButtons = {
@@ -52,6 +53,13 @@ function parseButton(event) {
 
         if (btnType != 'eq')
             operator = btnType;
+
+        if (btnType == 'ac') {
+            numA = null;
+            numB = null;
+            operator = null;
+            solution = null;
+        }
 
         doMath();
     }
