@@ -73,6 +73,10 @@ function doMath() {
 function updateDisplay() {
     if (solution !== null) {
         display.textContent = solution;
+        numA = solution;
+        numB = null;
+        operator = null;
+        solution = null;
         return;
     }
 
