@@ -4,6 +4,13 @@ const display = document.querySelector('.display');
 const buttons = document.querySelectorAll('.buttons div div');
 buttons.forEach((btn) => btn.addEventListener('click', parseButton));
 
+const opIcons = {
+    add: '+',
+    sub: '-',
+    mul: '×',
+    div: '÷',
+}
+
 const opButtons = {
     add: true,
     sub: true,
@@ -88,7 +95,7 @@ function updateDisplay() {
     }
 
     if (operator !== null) {
-        display.textContent += operator;
+        display.textContent += opIcons[operator];
     }
 
     if (numB!== null) {
