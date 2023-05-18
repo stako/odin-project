@@ -1,6 +1,6 @@
 .container {
     margin: auto;
-    background-color: brown;
+    background-color: #E5E9F0;
     width: 300px;
     border-radius: 8px;
     padding: 6px;
@@ -10,7 +10,9 @@
     padding: 6px;
     margin-bottom: 6px;
     height: 54px;
-    background-color: cadetblue;
+    background-color: #ECEFF4;
+    box-shadow: inset 0 0 10px #81A1C1;
+    border: 1px solid #81A1C1;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -30,12 +32,18 @@
 }
 
 .buttons>div>div {
-    background-color: blue;
+    background-color: #ECEFF4;
     flex: 0 0 64px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 2px #4C566A;
+    border: 1px solid #81A1C100;
     border-radius: 8px;
+}
+
+.buttons>div>div:hover {
+    border: 1px solid #81A1C1FF;
 }
 
 .buttons .button-empty {
