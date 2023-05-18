@@ -6,7 +6,7 @@ buttons.forEach((btn) => btn.addEventListener('click', parseButton));
 
 const opIcons = {
     add: '+',
-    sub: '-',
+    sub: '−',
     mul: '×',
     div: '÷',
 }
@@ -72,9 +72,8 @@ function parseButton(event) {
 }
 
 function doMath() {
-    if (numA !== null && numB !== null && operator !== null) {
+    if (numA !== null && numB !== null && operator !== null)
         solution = operations[operator](numA, numB);
-    }
 }
 
 function updateDisplay() {
@@ -87,18 +86,16 @@ function updateDisplay() {
         return;
     }
 
-    if (numA !== null) {
+    if (numA !== null)
         display.textContent = numA.toString()
-    } else {
+    else {
         display.textContent = 0;
         return;
     }
 
-    if (operator !== null) {
+    if (operator !== null)
         display.textContent += opIcons[operator];
-    }
 
-    if (numB!== null) {
+    if (numB!== null)
         display.textContent += numB;
-    }
 }
