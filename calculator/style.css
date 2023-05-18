@@ -59,4 +59,13 @@
 
 .buttons .button-eq {
     flex: 1 0 64px;
+    background-color: #8FBCBB;
+}
+
+.buttons .button-del {
+    background-color: #D08770;
+}
+
+.buttons .button-ac {
+    background-color: #EBCB8B;
 }
