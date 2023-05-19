@@ -20,10 +20,10 @@ function parseButton() {
             parseEquation();
             break;
         case 'ac':
-            // set equation to '0'
+            equation = '0';
             break;
         case 'del':
-            // delete 1 char from equation string
+            equation = equation.slice(0, -1);
             break;
         default:
             equation += this.textContent;
