@@ -65,5 +65,5 @@ function parseEquation() {
     numA = Number(numA);
     numB = Number(numB);
 
-    equation = operations[operator](numA, numB);
+    equation = operations[operator](numA, numB).toString();
 }
