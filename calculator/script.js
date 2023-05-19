@@ -31,6 +31,15 @@ function parseButton() {
             equation += this.textContent;
     }
 
+    // remove preceding 0
+    if (equation.length > 1 && equation[0] == '0')
+        equation = equation.slice(1);
+
+    // remove preceding 0 after operator
+    let index = equation.search(/[÷×−+]/);
+    if (index != -1 && equation.length > index+2 && equation[index+1] == '0')
+        equation = equation.slice(0, index+1) + equation.slice(index+2);
+
     display.textContent = equation;
 }
 
