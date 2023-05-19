@@ -1,109 +1,29 @@
-let numA = null, numB = null, operator = null, solution = null;
+let equation = '0';
 
 const display = document.querySelector('.display');
 const buttons = document.querySelectorAll('.buttons div div');
 buttons.forEach((btn) => btn.addEventListener('click', parseButton));
 
-const opIcons = {
-    add: '+',
-    sub: '−',
-    mul: '×',
-    div: '÷',
-}
-
-const opButtons = {
-    add: true,
-    sub: true,
-    mul: true,
-    div: true,
-    eq: true,
-    ac: true,
-};
-
-const numButtons = {
-    0: true,
-    1: true,
-    2: true,
-    3: true,
-    4: true,
-    5: true,
-    6: true,
-    7: true,
-    8: true,
-    9: true,
-}
-
-const operations = {
-    add: (a,b) => a+b,
-    sub: (a,b) => a-b,
-    mul: (a,b) => a*b,
-    div: (a,b) => a/b,
-}
-
-function parseButton(event) {
+function parseButton() {
     let btnType = this.className;
     btnType = btnType.replace('button-', '');
 
-    if (opButtons[btnType]) {
-        if (numA === null)
-            return;
-
-        if (btnType == 'eq' && numB === null)
-            return;
-
-        if (btnType != 'eq')
-            operator = btnType;
-
-        if (btnType == 'ac') {
-            numA = null;
-            numB = null;
-            operator = null;
-            solution = null;
-        }
-
-        doMath();
+    switch(btnType) {
+        case 'eq':
+            // parse equation
+            break;
+        case 'ac':
+            // set equation to '0'
+            break;
+        case 'del':
+            // delete 1 char from equation string
+            break;
+        default:
+            if (equation == '0')
+                equation = this.textContent;
+            else
+                equation += this.textContent;
     }
 
-    if (numButtons[btnType]) {
-        if (numA === null) {
-            numA = Number(btnType);
-        } else if (operator === null) {
-            numA = Number(numA + btnType); // number+string = concatenation
-        } else if (numB === null) {
-            numB = Number(btnType);
-        } else {
-            numB = Number(numB + btnType);
-        }
-    }
-
-    updateDisplay();
-}
-
-function doMath() {
-    if (numA !== null && numB !== null && operator !== null)
-        solution = operations[operator](numA, numB);
-}
-
-function updateDisplay() {
-    if (solution !== null) {
-        display.textContent = solution;
-        numA = solution;
-        numB = null;
-        operator = null;
-        solution = null;
-        return;
-    }
-
-    if (numA !== null)
-        display.textContent = numA.toString()
-    else {
-        display.textContent = 0;
-        return;
-    }
-
-    if (operator !== null)
-        display.textContent += opIcons[operator];
-
-    if (numB!== null)
-        display.textContent += numB;
+    display.textContent = equation;
 }
