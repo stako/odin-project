@@ -5,8 +5,15 @@
     color: #3B4252;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
 .container {
-    margin: auto;
     background-color: #E5E9F0;
     width: 300px;
     border-radius: 8px;
