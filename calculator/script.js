@@ -24,6 +24,8 @@ function parseButton() {
             break;
         case 'del':
             equation = equation.slice(0, -1);
+            if (equation.length == 0)
+                equation = '0';
             break;
         default:
             equation += this.textContent;
