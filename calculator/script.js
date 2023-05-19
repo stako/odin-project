@@ -35,15 +35,14 @@ function parseButton() {
 }
 
 function parseEquation() {
-    let numA = '', numB = '', operator = '', foundOperator = false;
+    let numA = '', numB = '', operator;
 
     for (let i in equation) {
         let char = equation[i];
 
         if (char != '.' && isNaN(char)) {
             operator = char;
-            foundOperator = true;
-        } else if (!foundOperator)
+        } else if (!operator)
             numA += char;
         else
             numB += char;
