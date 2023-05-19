@@ -31,16 +31,26 @@ function parseButton() {
             equation += this.textContent;
     }
 
-    // remove preceding 0
-    if (equation.length > 1 && equation[0] == '0')
-        equation = equation.slice(1);
-
-    // remove preceding 0 after operator
-    let index = equation.search(/[÷×−+]/);
-    if (index != -1 && equation.length > index+2 && equation[index+1] == '0')
-        equation = equation.slice(0, index+1) + equation.slice(index+2);
+    sanitizeEquation()
 
     display.textContent = equation;
+}
+
+function sanitizeEquation() {
+    // remove preceding 0 (1st operand)
+    if (equation.length > 1 && equation[0] == '0' && !isNaN(equation[1]))
+        equation = equation.slice(1);
+
+    let index = equation.search(/[÷×−+]/);
+    if (index != -1) {
+        // remove preceding 0 (2nd operand)
+        if (equation.length > index+2 && equation[index+1] == '0' && !isNaN(equation[index+2]))
+            equation = equation.slice(0, index+1) + equation.slice(index+2);
+
+        // add preceding 0 before decimal (2nd operand)
+        if (equation[index+1] == '.')
+            equation = equation.slice(0, index+1) + '0' + equation.slice(index+1);
+    }
 }
 
 function parseEquation() {
