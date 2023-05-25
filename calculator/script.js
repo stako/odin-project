@@ -12,6 +12,7 @@ const operations = {
 }
 
 let operatorPos = -1;
+let hasDecimal = false;
 
 function parseButton() {
     let btnType = this.className;
@@ -24,13 +25,22 @@ function parseButton() {
         case 'ac':
             equation = '0';
             operatorPos = -1;
+            hasDecimal = false;
             break;
         case 'del':
+            if (equation[equation.length - 1] == '.')
+                hasDecimal = false;
+
             equation = equation.slice(0, -1);
+
             if (equation.length == 0)
                 equation = '0';
-            if (equation.length < operatorPos + 1)
+                
+            if (equation.length < operatorPos + 1) {
                 operatorPos = -1;
+                if (equation.search('[.]') != -1)
+                    hasDecimal = true;
+            }
             break;
         case 'add':
         case 'sub':
@@ -38,8 +48,18 @@ function parseButton() {
         case 'div':
             if(operatorPos > -1)
                 break;
-            else
-                operatorPos = equation.length;
+
+            operatorPos = equation.length;
+            hasDecimal = false;
+            equation += this.textContent;
+            break;
+        case 'dec':
+            if (hasDecimal)
+                break;
+
+            hasDecimal = true;
+            equation += this.textContent;
+            break;
         default:
             equation += this.textContent;
     }
