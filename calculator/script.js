@@ -11,6 +11,8 @@ const operations = {
     div: (a,b) => a/b,
 }
 
+let operatorPos = -1;
+
 function parseButton() {
     let btnType = this.className;
     btnType = btnType.replace('button-', '');
@@ -21,12 +23,23 @@ function parseButton() {
             break;
         case 'ac':
             equation = '0';
+            operatorPos = -1;
             break;
         case 'del':
             equation = equation.slice(0, -1);
             if (equation.length == 0)
                 equation = '0';
+            if (equation.length < operatorPos + 1)
+                operatorPos = -1;
             break;
+        case 'add':
+        case 'sub':
+        case 'mul':
+        case 'div':
+            if(operatorPos > -1)
+                break;
+            else
+                operatorPos = equation.length;
         default:
             equation += this.textContent;
     }
