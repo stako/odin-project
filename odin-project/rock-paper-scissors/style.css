@@ -1,0 +1,58 @@
+:root {
+    --purple: #3B1F2B;
+    --red: #DB162F;
+    --vanilla: #DBDFAC;
+    --grey: #5F758E;
+    --blue: #383961;
+}
+
+.purple {
+    color: var(--purple);
+}
+
+.red {
+    color: var(--red);
+}
+
+.vanilla {
+    color: var(--vanilla);
+}
+
+.grey {
+    color: var(--grey);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+body {
+    background-color: var(--vanilla);
+    color: var(--purple);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+header {
+    font-weight: 900;
+    font-size: xx-large;
+}
+
+#container {
+    flex: auto;
+    width: 500px;
+    background-color: var(--grey);
+    padding: 12px;
+    margin: 12px;
+    border-radius: 8px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}

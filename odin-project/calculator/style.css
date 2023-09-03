@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    font-family: Roboto, sans-serif;
+    color: #3B4252;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #3B4252;
+}
+
+h1 {
+    margin: 0 0 6px 0;
+    font-variant: small-caps;
+    /* border-bottom: 2px solid #3B4252; */
+}
+
+.container {
+    background-color: #E5E9F0;
+    width: 300px;
+    border-radius: 8px;
+    padding: 6px 10px 10px 10px;
+    box-shadow: 5px 5px 8px #2E3440;
+}
+
+.display {
+    padding: 6px 10px;
+    margin-bottom: 50px;
+    height: 54px;
+    background-color: #ECEFF4;
+    box-shadow: inset 0 0 10px #81A1C1;
+    border: 1px solid #81A1C1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-weight: 700;
+    font-size: 32px;
+    overflow: hidden;
+}
+
+.buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.buttons>div {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.buttons>div>div {
+    background-color: #ECEFF4;
+    flex: 0 0 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 2px #4C566A;
+    border: 1px solid #81A1C100;
+    border-radius: 8px;
+}
+
+.buttons>div>div:hover {
+    border: 1px solid #81A1C1FF;
+}
+
+.buttons .button-empty {
+    display: none;
+}
+
+.buttons .button-eq {
+    flex: 1 0 64px;
+    background-color: #8FBCBB;
+}
+
+.buttons .button-ac {
+    background-color: #D08770;
+}
+
+.buttons .button-del {
+    background-color: #EBCB8B;
+}
