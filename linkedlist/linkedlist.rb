@@ -10,10 +10,6 @@ end
 class LinkedList
   attr_reader :head
 
-  def initialize
-    @head = nil
-  end
-
   def append(value)
     return @head = Node.new(value) if @head.nil?
 
