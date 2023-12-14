@@ -49,12 +49,11 @@ class LinkedList
   end
 
   def at(index)
-    return nil if @head.nil?
-
     tmp = @head
     pos = 0
 
     until pos == index
+      return nil if tmp.nil?
       tmp = tmp.next_node
       pos += 1
     end
