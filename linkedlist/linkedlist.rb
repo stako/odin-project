@@ -36,4 +36,41 @@ class LinkedList
 
     size
   end
+
+  def tail
+    return nil if @head.nil?
+
+    tmp = @head
+    until tmp.next_node.nil?
+      tmp = tmp.next_node
+    end
+
+    tmp
+  end
+
+  def at(index)
+    return nil if @head.nil?
+
+    tmp = @head
+    pos = 0
+
+    until pos == index
+      tmp = tmp.next_node
+      pos += 1
+    end
+
+    tmp
+  end
+
+  def contains?(value)
+    return false if @head.nil?
+
+    tmp = @head
+    until tmp.next_node.nil?
+      return true if tmp.value == value
+      tmp = tmp.next_node
+    end
+
+    false
+  end
 end
