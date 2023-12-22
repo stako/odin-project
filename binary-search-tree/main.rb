@@ -6,8 +6,7 @@ class Node
   end
 
   def is_leaf?
-    return true if @left.nil? && @right.nil?
-    false
+    @left.nil? && @right.nil?
   end
 end
 
@@ -45,14 +44,17 @@ class Tree
     parent = find_parent(data)
 
     if node.is_leaf?
+      # node has no children
       (node == parent.left) ? (parent.left = nil) : (parent.right = nil)
     elsif node.left.nil? || node.right.nil?
+      # node has 1 child
       if node == parent.right
         parent.right = node.right || node.left
       else
         parent.left = node.right || node.left
       end
     else
+      # node has 2 children
       replacement = node.right
       replacement = replacement.left until replacement.left.nil?
       delete(replacement.data)
@@ -85,6 +87,8 @@ class Tree
       return parent if child.nil?
     end
 
+    # returns nil if data belongs to root node
+    # returns would-be parent if data does not exist in tree
     parent
   end
 
