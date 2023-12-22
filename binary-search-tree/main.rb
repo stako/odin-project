@@ -48,11 +48,8 @@ class Tree
       (node == parent.left) ? (parent.left = nil) : (parent.right = nil)
     elsif node.left.nil? || node.right.nil?
       # node has 1 child
-      if node == parent.right
-        parent.right = node.right || node.left
-      else
-        parent.left = node.right || node.left
-      end
+      replacement = node.left || node.right
+      (node == parent.left) ? (parent.left = replacement) : (parent.right = replacement)
     else
       # node has 2 children
       replacement = node.right
