@@ -37,6 +37,31 @@ class Tree
     "Insertion completed: #{data}"
   end
 
+  def delete(data)
+    node = find_node(data)
+
+    return "Deletion skipped - data not found: #{data}" if node.nil?
+
+    parent = find_parent(data)
+
+    if node.is_leaf?
+      (node == parent.left) ? (parent.left = nil) : (parent.right = nil)
+    elsif node.left.nil? || node.right.nil?
+      if node == parent.right
+        parent.right = node.right || node.left
+      else
+        parent.left = node.right || node.left
+      end
+    else
+      replacement = node.right
+      replacement = replacement.left until replacement.left.nil?
+      delete(replacement.data)
+      node.data = replacement.data
+    end
+
+    "Deletion completed: #{data}"
+  end
+
   # private
 
   def build_tree(array, start, finish)
