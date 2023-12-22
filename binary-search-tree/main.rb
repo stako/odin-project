@@ -81,11 +81,11 @@ class Tree
 
       child = (data > parent.data) ? parent.right : parent.left
 
+      # return would-be parent if data does not exist in tree
       return parent if child.nil?
     end
 
     # returns nil if data belongs to root node
-    # returns would-be parent if data does not exist in tree
     parent
   end
 
