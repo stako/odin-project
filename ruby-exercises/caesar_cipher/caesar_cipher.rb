@@ -23,7 +23,5 @@ def caesar_cipher(message, offset) # rubocop:disable Metrics/MethodLength
     end
   end
 
-  puts cipher
+  cipher
 end
-
-caesar_cipher("What a string!", 5)
