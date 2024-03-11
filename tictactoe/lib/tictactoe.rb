@@ -5,8 +5,6 @@ class Game
     @board = Array.new(10)
     @players = [Player.new(self, "X"), Player.new(self, "O")]
     @current_player_id = @players.index(@players.sample)
-
-    play
   end
 
   def play
@@ -84,5 +82,3 @@ class Player
     end
   end
 end
-
-Game.new
